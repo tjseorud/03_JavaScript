@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/05_조건문.css">
+  <title>05_조건문</title>
+</head>
+<body>
+  <h1>조건문</h1>
+  <pre>
+    - 프로그래밍 코드가 해석되는 순서를 제어하는 '제어문'중 한 종류
+    - 작성된 조건식에 따라서 수행되는 코드를 변경하는 구문
+
+    * 조건식 : 결과가 True OR False인 식
+      - 논리 연산자(&&, ||, !)
+      - 비교 연산자
+      - boolean 
+  </pre>
+  <h3>if()</h3>
+  <pre>
+    <code>
+      number = 1;
+      if(number == 1){
+        true;
+      }
+    </code>
+  </pre>
+  <h4>입력 받은수가 양수(0보다 큰수) 인지 확인</h4>
+  <input type="number" id="input1">
+  <button onclick="check1()">양수 인지 Check</button>
+  <hr>
+
+  <h3>if() else</h3>
+  <pre>
+    <code>
+      number = 1;
+      if(number == 0){
+        true;
+      }
+      else{
+        false;
+      }
+    </code>
+  </pre>
+  <h4>1-100 사이의 난수를 발생시켜 홀/짝 판별하기</h4>
+  <button onclick="check2()">홀/짝 Check</button>
+  <hr>
+
+  <h3>if() else if() else</h3>
+  <pre>
+    <code>
+      number = 1;
+      if(number == 0){
+        true;
+      }
+      else if(number == 1){
+        true;
+      }
+      else{
+        false;
+      }
+    </code>
+  </pre>
+  <h4>양수,음수 0 판별기</h4>
+  <input type="number" id="input3">
+  <button onclick="check3()">Check</button>
+  <hr>
+
+  <h4>(Q) 어린이, 청소년, 성인 구분하기</h4>
+  <pre>
+    0  - 13세  : 어린이
+    14 - 19세  : 청소년
+    20 - 120세 : 성인
+    0 미만 120초과 : 잘 못 입력 하셨습니다.
+    메시지를 alert()를 이용하며 출력
+  </pre>
+  <label for="inputAge">나이 : </label>
+  <input type="number" id="inputAge">
+  <button onclick="ageCheck()">Check</button>
+  <button onclick="ageCheck2()">Check2</button>
+  <script src="../js/05_조건문.js"></script>
+</body>
+</html>
