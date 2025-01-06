@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>07_반복문</title>
+</head>
+<body>
+  <h1>for</h1>
+  <pre>
+    - 프로그램의 흐름을 제어하는 제어문 중 하나
+    - 특정 코드를 반복 수행 할 때 사용하는 구문
+    - 끝이 정해져 있는 반복에서 주로 사용
+
+    [작성법]
+    for(초기식(i=0); 조건식(i>10); 증감식(i++)){
+      조건식이 true 일 경우 수행 코드;
+    }
+  </pre>
+  <h4>console 1 2 3 4 5 출력</h4>
+  <button onclick="check()">print</button>
+  <h4>console 1-10 까지 출력</h4>
+  <button onclick="check2()">print</button>
+  <h4>console 5-13 까지 출력</h4>
+  <button onclick="check3()">print</button>
+  <h4>console 1-7 까지 한 줄로 출력</h4>
+  <button onclick="check4()">print</button>
+  <h4>console 4-11 까지 한 줄로 출력</h4>
+  <button onclick="check5()">print</button>
+  <h4>1-10 까지 증가한 숫자의 합 구하기</h4>
+  <button onclick="check6()">print</button>
+  <h4>입력 받은 값 사이 정수 값들의 합 구하기</h4>
+  input 1 : <input type="number"id="input7a">
+  input 2 : <input type="number"id="input7b">
+  <button onclick="check7()">print</button>
+  <h4>1-10 까지 2씩 증가한 숫자 출력 + 합계 구하기</h4>
+  <button onclick="check8()">print</button>
+  <h4>3-30 까지 3의 배수만 출력하기</h4>
+  <button onclick="check9()">print</button>
+  <h4>입력 받은 범위 내 지정된 수의 배수를 출력(한 줄), 합계 구하기</h4>
+  <div>시작 : <input type="number"id="start10"></div>
+  <div>종료 : <input type="number"id="end10"></div>
+  <div>배수 : <input type="number"id="multiple10"></div>
+  <button onclick="check10()">print</button>
+  <hr>
+  <h4>구구단 2단 출력하기</h4>
+  <button onclick="check11()">print</button>
+  <h4>입력 받은 단의 구구단 출력하기</h4>
+  <pre>
+    - 단이 입력 되지 않으면 
+      -> alert("단을 입력 해주세요"); 출력 후 종료
+    - 입력된 단이 2-9단이 아니면  
+      -> alert("2-9단 사이만 입력 해주세요"); 출력 후 종료
+  </pre>
+  <div>
+    단 입력 : <input type="number"id="dan12">
+    <button onclick="check12()">print</button>
+  </div>
+  <h4>10-1 까지 1씩 감소한 숫자 출력</h4>
+  <button onclick="check13()">print</button>
+  <h4>20-3 까지 3씩 감소한 숫자 출력</h4>
+  <button onclick="check14()">print</button>
+  <h4>구구단 3단 리버스 출력하기</h4>
+  <button onclick="check15()">print</button>
+  <h4>5의 배수마다 '@', 10의 배수마다 줄바꿈하면서 출력하기</h4> 
+  <p id="result16" style="border: 1px solid black; height: 100px; width: 300px;"></p>
+  <button onclick="check16()">print</button>
+  
+  <script src="../js/07_반복문.js"></script>
+</body>
+</html>
