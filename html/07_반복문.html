@@ -43,6 +43,7 @@
   <div>배수 : <input type="number"id="multiple10"></div>
   <button onclick="check10()">print</button>
   <hr>
+
   <h4>구구단 2단 출력하기</h4>
   <button onclick="check11()">print</button>
   <h4>입력 받은 단의 구구단 출력하기</h4>
@@ -63,8 +64,144 @@
   <h4>구구단 3단 리버스 출력하기</h4>
   <button onclick="check15()">print</button>
   <h4>5의 배수마다 '@', 10의 배수마다 줄바꿈하면서 출력하기</h4> 
+  <pre>
+    ex)
+    1 2 3 4 @ 6 7 8 9 @
+    11 12 13 14 @ 16 17 18 19 @
+    21 22 23 24 @ 26 27 28 29 @
+  </pre>
   <p id="result16" style="border: 1px solid black; height: 100px; width: 300px;"></p>
   <button onclick="check16()">print</button>
+  <hr>
+
+  <h1>이중 for</h1>
+  <pre>
+    반복문 내에 반복문이 작성된 형태
+
+    [작성법]
+    for(초기식(i=0); 조건식(i>10); 증감식(i++)){
+      for(초기식(j=0); 조건식(j>10); 증감식(j++)){
+        code;
+      }
+    }
+  </pre>
+  <h4>다음 모양 출력</h4>
+  <pre>
+    ex)
+    1234
+    1234
+    1234
+  </pre>
+  <button onclick="check17()">print</button>
+  <h4>다음 모양 출력</h4>
+  <pre>
+    ex)
+    12345
+    12345
+    12345
+    12345
+  </pre>
+  <button onclick="check18()">print</button>
+  <h4>다음 모양 출력</h4>
+  <pre>
+    ex)
+    654321
+    654321
+    654321
+  </pre>
+  <button onclick="check19()">print</button>
+  <h4>다음 모양 출력</h4>
+  <pre>
+    ex)
+    1
+    12
+    123
+    1234
+    12345
+  </pre>
+  <button onclick="check20()">print</button>
+  <h4>다음 모양 출력</h4>
+  <pre>
+    ex)
+    3
+    34
+    345
+    3456
+  </pre>
+  <button onclick="check21()">print</button>
+  <h4>다음 모양 출력</h4>
+  <pre>
+    ex)
+    *
+    **
+    ***
+  </pre>
+  <button onclick="check22()">print</button>
+  <h4>입력 받은 숫자 만큼 * 모양 트리 출력</h4>
+  <div>input : <input type="number"id="input23">
+    <button onclick="check23()">print</button>
+  </div>
+  <h4>다음 모양 출력</h4>
+  <pre>
+    ex)
+    ****
+    ***
+    **
+    *
+  </pre>
+  <button onclick="check24()">print</button>
+  <hr>
+
+  <h1>반복문 활용 기술</h1>
+  <pre>
+    - 숫자 누적(합계, sum)
+    - 문자열 누적
+    - 숫자 세기(count)
+  </pre>
+  <h4>1-30 사이의 정수 중 4의 배수는?</h4>
+  <button onclick="check25()">print</button>
+  <h4>1-100 사이의 정수 중 입력받은 값의 배수는?</h4>
+  <div><input type="number" id="input26">
+    <button onclick="check26()">print</button>
+  </div>
+  <hr>
+  <h4>count 를 이용해 숫자 부여하기</h4>
+  <pre>
+    1 2 3 4
+    5 6 7 8
+    9 10 11 12
+  </pre>
+  <button onclick="check27()">print</button>
+  <hr>
+
+  <h1>while</h1>
+  <pre>
+    - 끝이 정해져 있지 않은 경우 사용
+
+    [작성법]
+    while(true){
+      code;
+    }
+  </pre>
+  <h4>prompt 를 이용해서 입력받은 숫자 모두 sum</h4>
+  <pre>
+    단, 취소 입력시 누적된 합계 alert로 출력
+  </pre>
+  <button onclick="check28()">시작</button>
+  <hr>
+
+  <h3>메뉴 주문하기</h3>
+  <ol>
+    <li>김밥 : 4000</li>
+    <li>라면 : 4500</li>
+    <li>돈까스 : 9000</li>
+  </ol>
+  <strong style="color: red;">취소 시 주문 완료</strong>
+  <button onclick="check29()">주문하기</button>
+  <h4>주문 내역</h4>
+  <ul id="result29" style="height: 200px;">
+    
+  </ul>
   
   <script src="../js/07_반복문.js"></script>
 </body>

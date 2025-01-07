@@ -150,3 +150,173 @@ function check16(){
   }
   document.getElementById("result16").innerHTML =result;  /* result16 print */// innerText  
 }
+/** 다음 모양 출력 */
+function check17(){  
+  for(let i=1; i<=3; i++){
+    let result ="";
+    for(let j=1; j<=4; j++){
+      result +=j;
+    }
+    console.log(result);
+  }  
+}
+/** 다음 모양 출력 */
+function check18(){  
+  for(let i=1; i<=4; i++){
+    let result ="";
+    for(let j=1; j<=5; j++){
+      result +=j;
+    }
+    console.log(result);
+  }  
+}
+/** 다음 모양 출력 */
+function check19(){  
+  for(let i=3; i>=1; i--){
+    let result ="";
+    for(let j=6; j>=1; j--){
+      result +=j;
+    }
+    console.log(result);
+  }  
+}
+/** 다음 모양 출력 */
+function check20(){    
+  for(let i=1; i<=5; i++){  
+    let result ="";
+    for(let j=1; j<=i; j++){
+      result +=j;
+    }  
+    console.log(result);  
+  }  
+}
+/** 다음 모양 출력 */
+function check21(){    
+  for(let i=1; i<=5; i++){  
+    let result ="";
+    for(let j=1; j<=i; j++){
+      result +=j +2;
+    }  
+    console.log(result);  
+  }  
+}
+/** 다음 모양 출력 */
+function check22(){    
+  for(let i=1; i<=3; i++){  
+    let result ="";
+    for(let j=1; j<=i; j++){
+      result +='*';
+    }  
+    console.log(result);  
+  }  
+}
+/** 입력 받은 숫자 만큼 * 모양 트리 출력 */
+function check23(){  
+  const input23 =document.getElementById("input23"); 
+  const input =Number(input23.value);
+  if(input23.value.length ===0){
+    alert("숫자를 입력 해주세요");
+    return;
+  }
+  if(input <=0){
+    alert("0 보다 큰 숫자를 입력 해주세요");
+    return;
+  }
+  for(let i=1; i<=input; i++){  
+    let result ="";
+    for(let j=1; j<=i; j++){
+      result +='*';
+    }  
+    console.log(result);  
+  }  
+}
+/** 다음 모양 출력 */
+function check24(){    
+  for(let i=1; i<=4; i++){
+    let result ="";
+    for(let j=4; j>=i; j--){  /* for(let j=1; j<=i +5; j++) */
+      result +="*";
+    }
+    console.log(result);
+  } 
+}
+/** 1-30 사이의 정수 중 4의 배수는? */
+function check25(){
+  let count =0;
+  for(let i=1; i<=30; i++){
+    if(i %4 ===0){
+      count++;
+    }
+  }
+  console.log("count : ",count);
+}
+/** 1-100 사이의 정수 중 입력받은 값의 배수는? */
+function check26(){
+  const input =Number(document.getElementById("input26").value);
+  let count =0;
+  for(let i=1; i<=100; i++){
+    if(i %input ===0){
+      count++;
+    }
+  }
+  console.log(`1-100 사이 ${input} 배수는 ${count} 개 있습니다`);
+}
+/** count 를 이용해 숫자 부여하기 */
+function check27(){
+  let count =1;
+  for(let i=1; i<=3; i++){
+    let str ="";
+    for(let j=1; j<=4; j++){
+      // str += `${count} `; /* count + " " */
+      // count++;
+      str += `${count++} `;
+    }
+    console.log(str);
+  }
+}
+/** prompt 를 이용해서 입력받은 숫자 모두 sum */
+function check28(){
+  let sum =0;
+  let val;  /* prompt 값 */
+  while((val =prompt("숫자 입력 (취소시 햡계)")) !==null){
+    sum +=Number(val);
+  }
+  alert(`sum : ${sum}`);
+}
+/** 메뉴 주문하기 */
+function check29(){
+  const gimbap =4000;
+  const ramen =4500;
+  const donkkth =9000;
+  let g_count =0;
+  let r_count =0;
+  let d_count =0;
+  let input;
+  let outputHtml =''; /* 출력할 html code */
+  /* undefined != null */
+  while(input !==null){ 
+    input =prompt("메뉴 번호 입력(1.김밥 2.라면 3.돈까스)");
+    switch(input){
+      case '1': g_count++; break;
+      case '2': r_count++; break;
+      case '3': d_count++; break;
+      case null: alert(`주문 완료`); break;
+      default: alert(`잘못 입력 하셨습니다`);
+    }       
+  }
+  // 김밥
+  if(g_count >0){
+    outputHtml +=`<li>김밥 (${g_count})개 : ${gimbap*g_count} 원</li>`
+  }
+  // 라면
+  if(r_count >0){
+    outputHtml +=`<li>라면 (${r_count})개 : ${ramen*r_count} 원</li>`
+  }
+  //돈까스
+  if(d_count >0){
+    outputHtml +=`<li>돈까스 (${d_count})개 : ${donkkth*d_count} 원</li>`
+  }
+  // const sum =(gimbap*g_count) +(ramen*r_count) +(donkkth*d_count);
+  outputHtml += `<li>합계 : ${(gimbap*g_count)+(ramen*r_count)+(donkkth*d_count)} 원</li>`
+  document.getElementById("result29").innerHTML =outputHtml;
+}
