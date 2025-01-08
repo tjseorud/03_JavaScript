@@ -105,8 +105,9 @@ function selectMenu(){
   // #menuResult
   document.getElementById('menuResult').innerText=menus[num];
 }
-/**로또 번호 생성기 */
-/* Arr.includes(i) : () 내 값이 배열에 존재하면 true, false */
+/**로또 번호 생성기
+ * Arr.includes(i) : () 내 값이 배열에 존재하면 true, false
+ */
 function creatLottoNumber(){
   const lotto=document.getElementById("lotto"); /* #lotto */
   lotto.innerHTML=""; /* delete */
@@ -159,4 +160,43 @@ function check6(){
   dArr2[0][0]=dArr2[0][0]*10;
   dArr2[1][0]*=10;  /* 복합대입연산자 */
   dArr2[2][0]*=10;
+}
+/**2차원 Array 2
+ * 4행 4열 2차원 배열에 1-16 사이 난수 배치(중복 X)
+ * 1) 콘솔 출력
+ * 2) prompt 이용 1-16 사이 숫자 입력 받고 2차원 배열 어디에 위치하는지 검색 후 출력
+ */
+function check7(){
+  // 중복되지 않는 난수 16개를 저장한 1차원 배열
+  const randomArr=[];
+  const arr=[]; /* 2차원 */
+  let index=0;  /* randomArr 접근할 변수 */
+  for(let i=0;i<16;i++){
+    const num=Math.floor(Math.random()*16+1);
+    /* 중복방지 */
+    if(randomArr.includes(num)){
+      i--;
+      continue;
+    }
+    randomArr[i]=num;
+  }
+  for(let i=0;i<4;i++){
+    arr[i]=[];  /* 1차원 */
+    for(let j=0;j<4;j++){
+      // arr[i][j]=`(${i},${j})`;
+      arr[i][j]=randomArr[index++]; /* 후위 연산 이용 */
+      // index++; 
+    }
+  }
+  console.log(arr); 
+  // 2)
+  const input=Number(prompt("1-16 사이 숫자 입력"));
+  for(let i=0;i<arr.length;i++){
+    for(let j=0;j<arr[i].length;j++){
+      if(arr[i][j]===input){  /* arr[i][j] 값과 입력 값이 같을 때 */
+        alert(`${input}은(는) [${i}, ${j}]에 위치`);
+        return;
+      }
+    }
+  }
 }
