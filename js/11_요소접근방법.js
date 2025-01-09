@@ -59,3 +59,56 @@ function nameTest(){
    */
   div.innerHTML =content; 
 }
+/**CSS로 요소 접근 */
+function cssTest(){
+  /* target-div="css-div" */
+  const container =document.querySelector("[target-div =css-div]"); /* -> 여러요소가 선택된 경우 "첫번째 요소만 얻음" */
+  console.log(container);
+  container.style.width='200px';
+  container.style.height='200px';
+  container.style.border ='10px solid orange';
+  // document.querySelector("css"); -> first
+  const first =document.querySelector('[target-div =css-div] > div');
+  first.style.color ='red';
+  first.style.fontSize ='30px';
+  // document.querySelectorAll("css");  -> ALL
+  const divs =document.querySelectorAll('[target-div =css-div] > div');
+  console.log(divs);
+  const colors =['yellow','pink'];
+
+  for(let i=0;i<divs.length;i++){
+    divs[i].style.height ='50%';
+    divs[i].style.display ='flex';
+    divs[i].style.justifyContent ='center'; /* 중심축 방향 중앙 */
+    divs[i].style.alignItems ='center'; /* 교차축 방향 중앙 */
+    divs[i].style.backgroundColor =colors[i]; 
+
+  }
+}
+/**카카오톡 모양의 채팅 화면 만들기 */
+function readValue(){
+  const bg =document.querySelector('#chattingBg');  /* chat Bg */
+  const input =document.querySelector('#userInput');   /* input chat */
+  /* input null || 공백 문자(띄어쓰기, Tab, 엔터)만 있을 경우*/
+  // string.trim(); : 문자열 좌우 공백 제거
+  if(input.value.trim().length ===0){
+    alert('내용을 입력하세요');
+    input.value ='';  /* 내용 제거 */
+    input.focus();  /* input에 초점을 맞춤 */
+    return;
+  }
+  bg.innerHTML +=`<p><span>${input.value}</span></p>`;  /* input 값 채팅화면에 누적 */
+  input.value ='';
+  input.focus();
+  // 요소.scrollHeight : 스크롤되어 가려진 부분을 포함한 요소 전체 높이
+  // 요소.scrollTop : 스크롤 상단부터 현재 위치
+  // 요소.scrollTop =value; -> 스크롤 상단에서 지정된 값 만큼 위치로 이동
+  bg.scrollTop =bg.scrollHeight;
+}
+/* #userInput에 'Enter'키가 입력된 경우 채팅 추가 */
+document.querySelector('#userInput').addEventListener('keydown',function(e){
+  // console.log(e.key);
+  if(e.key ==='Enter'){
+    readValue();
+  }
+});

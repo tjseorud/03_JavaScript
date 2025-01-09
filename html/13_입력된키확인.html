@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/13_입력된키확인.css">
+  <title>13_입력된키확인</title>
+</head>
+<body>
+  <!-- Event Key -->
+  <div class="container">
+    <div class="key-box">
+      <div class="key">Q</div>
+      <div class="key">W</div>
+      <div class="key">E</div>
+      <div class="key">R</div>
+    </div>
+  </div>
+  <hr>
+  <pre>
+    - keydown  : key가 눌렀을 때, 눌러져 있을 때
+    - keypress : key가 눌러져 있을 때
+    - keyup    : key가 눌러져 있다가 올라올 때(1회)
+
+    * 눌러진 키 확인 방법
+    요소.addEventListener("keyEvent", function(e){
+      매개 변수 e : 발생한 이벤트 관련 정보를 저장한 객체
+      e.key : 어떤 key가 눌렸는지 출력
+    });
+  </pre>
+  <!-- 마우스 커서를 따라다니는 이미지 만들기 -->
+  <img src="../images/Y.jpg" id="cursorImage">
+
+  <script src="../js/13_입력된키확인.js"></script>
+</body>
+</html>
