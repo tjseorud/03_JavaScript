@@ -14,37 +14,36 @@ function check1(div){
   div.innerText =++num; 
 }
 /**고전 Event Model */
-// const testA =document.querySelector('#testA');
-// // const testA =document.getElementById('testA');
-// /* 고전 Event Model 작성법 
-//  * 요소.Event Listener =Event Handler; */
-// testA.onclick =function(){
-//   /* testA 가 가지고 있는 
-//    * onclick 변수에 -> Event Listener
-//    * function(){}을 대입 -> Event Handler */
-//   /* 고전 이벤트 모델에서 this == Event가 발생한 요소 */
-//   console.log(div);
-//   testA.onclick =;
-//   alert('고전 이벤트 모델'); 
-// }
-// /**고전 Event Model 제거 */
-// // #testB 클릭시 #testA의 클릭 이벤트 핸들러 제거
-// const testB =document.querySelector('#testB');
-// testB.onclick =function(){
-//   testA.onclick =null;
-//   alert('이벤트 핸들러 제거');
-// }
-// /**고전 Event Model 단점 */
-// // 이벤트 리스너에 이벤트 핸들러 대입
-// const testC =document.querySelector('#testC');
-// testC.onclick =function(){
-//   testC.style.backgroundColor ='pink';
-// }
+const testA =document.querySelector('#testA');
+// const testA =document.getElementById('testA');
+/* 고전 Event Model 작성법 
+ * 요소.Event Listener =Event Handler; */
+testA.onclick =function(){
+  /* testA 가 가지고 있는 
+   * onclick 변수에 -> (Event Listener)
+   * function(){}을 대입 -> (Event Handler) */
+  /* 고전 이벤트 모델에서 this == Event가 발생한 요소 */
+  console.log(this);
+  alert('고전 이벤트 모델'); 
+}
+/**고전 Event Model 제거 */
+// #testB 클릭시 #testA의 클릭 이벤트 핸들러 제거
+const testB =document.querySelector('#testB');
+testB.onclick =function(){
+  testA.onclick =null;
+  alert('이벤트 핸들러 제거');
+}
+/**고전 Event Model 단점 */
+// 이벤트 리스너에 이벤트 핸들러 대입
+const testC =document.querySelector('#testC');
+testC.onclick =function(){
+  testC.style.backgroundColor ='pink';
+}
 // 이벤트 리스너에 이벤트 핸들러 다시 대입
-// const testC =document.querySelector('#testC');
-// testC.onclick =function(){
-//   testC.style.fontSize ='40px';
-// }
+const testC =document.querySelector('#testC');
+testC.onclick =function(){
+  testC.style.fontSize ='40px';
+}
 /**표준 Event Model */
 // 클릭할수록 투명 + 횟수 증가
 const test1 =document.querySelector('#test1');
