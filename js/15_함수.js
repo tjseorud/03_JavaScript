@@ -26,8 +26,8 @@ btn1.addEventListener('click',function(){
 */
 function sumArr(arr){
   let sum =0;
-  for(let sum of arr){
-    sum +=arr;  /* arr[i]에 저장된 요소를 하나씩 sum에 저장 */
+  for(let num of arr){
+    sum +=num;  /* arr[i]에 저장된 요소를 하나씩 num에 저장 */
   }
   alert(`합계 : ${sum}`);
 }
