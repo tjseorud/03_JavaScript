@@ -37,7 +37,7 @@ btn2.addEventListener('click',function(){
   const arr =[];
   for(let input of input2){
     /* arr.push(값) : 값을 배열 마지막 요소로 추가 */
-    arr.push(Number(input2.value));
+    arr.push(Number(input.value));
   }
   sumArr(arr);
 });
