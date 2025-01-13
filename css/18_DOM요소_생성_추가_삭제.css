@@ -1,0 +1,18 @@
+div{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 1px solid #000;
+}
+.container{
+  width: 502px;
+  height: 302px;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: flex-start;  /* wrap 단위 위쪽 정렬 */
+}
+.box{
+  width: 100px;
+  height: 100px;
+  word-break: break-all;  /* 내용이 요소를 넘어가면 자동 줄 바꿈 */
+}
