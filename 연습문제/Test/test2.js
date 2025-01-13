@@ -1,10 +1,15 @@
-const number =document.querySelectorAll('.number');
+const number =document.querySelector('.number');
 const result =document.querySelector('#result');
-for(let i=0;i<10;i++){
-  number[i].addEventListener('click',(e)=>{
-    result.innerText +=e.target.value;
-  });
-}
+let count =0;
+number.addEventListener('click',(e)=>{
+  result.innerText +=e.target.innerText;
+  if(count===10){
+    result.innerText ='';
+    count=0;
+  }
+  count++;
+});
+
 const btn =document.querySelector('#reset');
 btn.addEventListener('click',()=>{
   result.innerText ='';
