@@ -13,6 +13,7 @@
       기능 == 함수(메서드)
   </pre>
   <hr>
+
   <h1>JavaScript Object</h1>
   <pre>
     - {} (블록) 내에 Key : Value 형태의 한 쌍으로 데이터/함수가 저장된 형태
@@ -69,6 +70,7 @@
       - (메모리에) 생성자 함수에 정의된 내용대로 새로운 객체를 생성
   </pre>
   <hr>
+
   <h3>학생 기록부</h3>
   <table border="1" style="border-collapse: collapse;">
     <tr>
@@ -109,6 +111,37 @@
       <th colspan="3" id="total">0명</th>
     </tfoot>
   </table>
+  <hr>
+
+  <h1>JSON</h1>
+  <pre>
+    - JavaScript Object Notation
+      (자바스크립트 객체 표기법)
+    
+    - 자바스크립트 객체 모양으로 작성된 문자열(string)
+
+    JS 객체(object)     :  {"name":"홍길동", "age", 25}
+    JSON 문자열(string) : '{"name":"홍길동", "age", 25}'
+
+    [Why?]
+    1) string(문자열)은 모든 언어에서 공통으로 지원하는 타입
+      -> 문자열 타입은 서로 다른 프로그램 끼리 데이터 교환에 용이함
+
+    2) JS 객체 형식이 데이터를 구분하기에 간단한 형식
+
+    3) 경량 데이터 교환 방식
+  </pre>
+  <h3>JS가 제공하는 JSON 전용 내장 객체</h3>
+  <pre>
+    - 프로그래밍 언어 별로 JSON을 다루기 위한 기능, 라이브러리가 제공됨
+
+    - 객체명 : JSON
+
+    - JSON.stringify(JS객체) : JS 객체 -> JSON(문자열) 변환
+
+    - JSON.parse(JSON문자열) : JSON(문자열) -> JS 객체 변환
+  </pre>
+  <button id="checkJson">JSON 확인</button>
 
   <script src="../js/20_JS객체.js"></script>
 </body>

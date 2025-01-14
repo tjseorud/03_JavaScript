@@ -102,7 +102,7 @@ function Student(grade,ban,number,name){
   this.number =number;
   this.name =name;
   // 메서드(객체의 함수)
-  this.inform =function(){
+  this.inform =function(){  
     let str =`${this.grade}학년 ${this.ban}반 ${this.number}번 ${this.name}`;
     return str;
   }
@@ -163,11 +163,16 @@ selectStudent.addEventListener('click',()=>{
     el.textContent =text; /* 내용 추가 */
     return el;  /* 만들어진 요소 반환 */
   }
+  /* 배열.forEach(item, index) =>{
+   *  item : for 반복 시 0 index 부터 차례대로 꺼낸 요소
+   * 
+   * }); 
+  */  
   studentList.forEach((std,index)=>{  /* studentList를 반복 접근하면서 tr,th,td 요소 만들어 추가 */
-    // std : studentList에서 하나씩 꺼낸 학생 객체
-    // index : 현재 index
-    // tr 생성
-    const tr =document.createElement('tr');
+    /* std : studentList에서 하나씩 꺼낸 학생 객체
+     * index : 현재 index 
+    */
+    const tr =document.createElement('tr'); /* tr 생성 */
     const th =createEl('th',index +1);
     const td1 =createEl('td',std.name);
     const td2 =createEl('td',std.grade);
@@ -175,11 +180,29 @@ selectStudent.addEventListener('click',()=>{
     const td4 =createEl('td',std.number);
     tr.append(th,td1,td2,td3,td4); /* tr 조립 */
     tbody.append(tr); /* tbody에 tr 추가 */
+    td1.addEventListener('click',()=>{ /* 이름이 작성된 요소(td1)가 클릭 되었을 때 */
+      alert(std.inform()); /* inform() 메서드 반환 결과 alert 출력 */
+    });
   });
-  document.querySelector('#total').innerText =`${studentList.length}명`;  /* #total에 총 인원 수 출력 */
+  document.querySelector('#total').innerText =`${studentList.length}명`;  /* #total에 인원 수 출력 */
 }); 
-/* 배열.forEach(item, index) =>{
- * // item : for 반복 시 0 index 부터 차례대로 꺼낸 요소
- * 
- * }); 
-*/
+
+/* JSON */
+const checkJson =document.querySelector('#checkJson');
+checkJson.addEventListener('click',()=>{
+  const user ={ /* JS 객체 생성 */
+    "id":"user01",
+    "pw":"pass01",
+    "email":"user01@gmail.com",
+    "phone":"010-1234-1234"
+  };
+  console.log("user : ",user,typeof user);
+  // JSON.stringify(JS객체) : JS 객체 -> JSON(문자열)
+  console.log("JSON.stringify(user) : ",JSON.stringify(user),typeof JSON.stringify(user));
+
+  const menu ='{"name":"김밥","price":4000}'; /* JSON 직접 작성 */
+  console.log("menu : ",menu,typeof menu);
+  
+  // jSON.parse(JSON문자열) : JSON(문자열) -> JS 객체
+  console.log(JSON.parse(menu),typeof JSON.parse(menu));
+});
