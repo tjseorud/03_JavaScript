@@ -1,20 +1,15 @@
 const btn =document.querySelector('#btn');
 btn.addEventListener('click',()=>{
-  const fruit =document.querySelectorAll('#fruit:checked');
-  const number =document.querySelectorAll('#number');
-  const result =document.querySelector('#result');
-  result.innerHTML ='';
-  const arr=[];
+  const fruits =document.querySelectorAll('#fruit:checked');
+  let str ='';
   let sum =0;
-  for(let i=0;i<fruit.length;i++){
-    fruit[i].addEventListener('change',()=>{
-      // console.log(e.target.value);     
-      result.innerHTML +=fruit[i].value;
-      result.innerHTML +=number[i].value + '개';
-    });
+  for(let fruit of fruits){
+    const parent =fruit.parentElement;
+    const name =parent.children[1].innerText;  /* innerText == textContent */
+    const span =parent.children[2].innerText;  /* input type을 제외한 모든 */
+    const number =parent.children[3].value;  /* input type : value only */
+    str +=`${name} ${number}개 `;
+    sum +=Number(span) *Number(number);
   }
-  sum +=number[0].value*2000; /* apple */
-  sum +=number[1].value*3000; /* banana */
-  sum +=number[2].value*5000; /* melon */
-  result.innerHTML +=` 총합 ${sum}원`;
+  document.querySelector('#result').innerText =`${str} 총합 ${sum}원`;
 });
