@@ -1,0 +1,55 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.top{
+  display: flex;
+  justify-content: left;
+  padding-top: 30px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+}
+.top > input{
+  border: none;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+#display{
+  display: flex;
+  align-items: flex-start;
+  overflow: auto;
+  width: auto;
+  height: 300px;
+  border: 2px solid #000;
+  border-left: none;
+  border-right: none;
+}
+.listView{
+  margin-left: 20px;
+  margin: 5px;
+}
+.listView > #nameList{
+  width: 140px;
+}
+.listView > #numberList{
+  width: 80px;
+}
+
+.btn{
+  display: flex;
+  justify-content: right;
+  padding-right: 10px;
+}
+button{
+  width : 80px;
+  margin-left: 5px;
+  font-size: 15px;
+  font-weight: bold;
+  border: 2px solid #000;;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+}
