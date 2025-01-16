@@ -26,19 +26,27 @@ add.addEventListener('click', ()=>{
     return el;
   }
   const div =createEl('div','list');
-  const span1 =createEl('span','saveList');
-  const span2 =createEl('span','starList');
-  const span3 =createEl('span','removeList');
-  span1.innerText +=result.innerText +' ';
-  span2.innerText +="☆" +' ';
-  span2.addEventListener('click',()=>{
-    
+  const text =createEl('span','saveList');
+  const star =createEl('span','starList');
+  const span =createEl('span','removeList');
+  text.innerText +=result.innerText +' ';
+  star.innerText +="☆";
+  star.addEventListener('click',()=>{
+    if(star.innerText ==='☆'){
+      star.innerText ='★';
+      star.style.color ='orange';
+      text.style.color ='red';
+    }else{
+      star.innerText ='☆';
+      star.style.color ='black';
+      text.style.color ='black';
+    }
   });
-  span3.innerHTML +="&times;";
-  span3.addEventListener('click',e=>{ 
+  span.innerHTML +="&times;";
+  span.addEventListener('click',e=>{ 
     e.target.parentElement.remove();
   });
-  div.append(span1,span2,span3);
+  div.append(text,star,span);
   listView.append(div);
   result.innerText ='';
 });
